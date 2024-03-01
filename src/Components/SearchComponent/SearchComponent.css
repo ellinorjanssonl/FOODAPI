@@ -12,6 +12,8 @@
     width: 300px;
     height: 30px;
     margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
   }
   
   .meals-list {
@@ -44,6 +46,20 @@
   
   .search-info {
     color: rgb(255, 198, 112);
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 20px;
+  }
+
+  .search-container button {
+    background-color: rgb(57, 143, 31);
+    border: 2px solid black;
+    color:rgb(255, 198, 112);
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.5s ease-in-out;
   }
