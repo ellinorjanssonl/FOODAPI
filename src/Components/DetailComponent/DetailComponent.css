@@ -20,9 +20,9 @@
 
 .detail-container h1 {
   margin: 0;
-  background-color: rgb(57, 143, 31);
-  width: 50%;
-  border: 1px solid black;
+  color: rgb(49, 171, 25);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+  padding: 0 1rem;
   border-radius: 10px;
   margin-bottom: 1rem;
   font-size: 3rem;
@@ -31,6 +31,14 @@
 .detail-container p {
   margin: 0;
   font-size: 1rem;
+  text-align: center; /* Centrerar texten */
+}
+
+.detail-container h2 {
+  margin: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
   text-align: center; /* Centrerar texten */
 }
 

@@ -9,9 +9,7 @@ const DetailComponent = ({ selectedMeal }) => {
        <div className="detail-container">
       <h1>{selectedMeal.strMeal}</h1>
       <img className="imgmeal" src={selectedMeal.strMealThumb} alt={`Bild av ${selectedMeal.strMeal}`} />
-      <h2><strong>Ursprung:</strong></h2>
-      <p>{selectedMeal.strArea}</p>
-      <h2><strong>Ingredienser</strong></h2>
+      <h2><strong>Ingredienser:</strong></h2>
       <ul>
         {Object.keys(selectedMeal)
           .filter((key) => key.includes('strIngredient') && selectedMeal[key])
@@ -19,8 +17,7 @@ const DetailComponent = ({ selectedMeal }) => {
             <li className="list"key={key}>{selectedMeal[key]}</li>
           ))}
       </ul>
-
-      <h2><strong>Instruktioner</strong></h2>
+      <h2><strong>Instruktioner:</strong></h2>
       <p>{selectedMeal.strInstructions}</p>
     </div>
     </div>

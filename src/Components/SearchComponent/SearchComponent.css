@@ -17,6 +17,12 @@
   }
   
   .meals-list {
+    max-height: 100vh; 
+    scroll-behavior: smooth;
+    scrollbar-color: rgb(255, 198, 112) rgb(46, 44, 40);
+    overflow-y: auto; 
+    list-style: none; 
+    padding: 0; 
     color: rgb(255, 198, 112);
     list-style: none;
     font-weight: 700;
