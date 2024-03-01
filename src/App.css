@@ -1,0 +1,17 @@
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.search-detail-container {
+  flex: 1; /* Gör så att varje container tar upp lika mycket utrymme */
+  padding: 20px; /* Lägg till lite mellanrum mellan dina containers */
+}
+
+ body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color:  rgb(232, 172, 83);
+}

@@ -1,0 +1,25 @@
+.header-container {
+    background-image: url('Header.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+}
+
+.header-container h1{
+    display: flex;
+    font-size: 7rem;
+    color: rgb(232, 172, 83);
+    text-align: center;
+    margin-top: 25%;
+    font-weight: 700;
+}
+
+.header{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.Navbar {
+    display: flex;
+}

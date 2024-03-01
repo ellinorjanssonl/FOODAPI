@@ -1,0 +1,49 @@
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(46, 44, 40);
+  }
+  
+  .search-input {
+    color: rgb(0, 0, 0);
+    width: 300px;
+    height: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .meals-list {
+    color: rgb(255, 198, 112);
+    list-style: none;
+    font-weight: 700;
+    padding: 0;
+  }
+  
+  .meal-item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;/* Gör så att varje maträtt hamnar under varandra */
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .meal-item img {
+    width: 50%; /* Mindre bilder inuti listan */
+    padding: 0.5rem;
+    border-radius: 30px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
+    border:1px solid black;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .meal-item img:hover {
+    transform: scale(1.1);
+  }
+  
+  .search-info {
+    color: rgb(255, 198, 112);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
