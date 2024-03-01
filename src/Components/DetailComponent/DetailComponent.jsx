@@ -2,16 +2,26 @@ import React from 'react';
 import './DetailComponent.css';
 
 const DetailComponent = ({ selectedMeal }) => {
-  if (!selectedMeal) return <div>Välj en maträtt för att se detaljer.</div>;
+  if (!selectedMeal) return <div className='selectmeal'>Välj en maträtt för att se detaljer här.</div>;
 
   return (
     <div>
        <div className="detail-container">
-      <h2>{selectedMeal.strMeal}</h2>
-      <img src={selectedMeal.strMealThumb} alt={`Bild av ${selectedMeal.strMeal}`} />
-      <p><strong>Kategori:</strong> {selectedMeal.strCategory}</p>
-      <p><strong>Ursprung:</strong> {selectedMeal.strArea}</p>
-      <p><strong>Instruktioner:</strong> {selectedMeal.strInstructions}</p>
+      <h1>{selectedMeal.strMeal}</h1>
+      <img className="imgmeal" src={selectedMeal.strMealThumb} alt={`Bild av ${selectedMeal.strMeal}`} />
+      <h2><strong>Ursprung:</strong></h2>
+      <p>{selectedMeal.strArea}</p>
+      <h2><strong>Ingredienser</strong></h2>
+      <ul>
+        {Object.keys(selectedMeal)
+          .filter((key) => key.includes('strIngredient') && selectedMeal[key])
+          .map((key) => (
+            <li className="list"key={key}>{selectedMeal[key]}</li>
+          ))}
+      </ul>
+
+      <h2><strong>Instruktioner</strong></h2>
+      <p>{selectedMeal.strInstructions}</p>
     </div>
     </div>
   );

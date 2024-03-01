@@ -1,13 +1,53 @@
 .detail-container {
-    margin-top: 20px;
-  }
-  
-  .detail-container img {
-    width: 700px; /* Större bild för vald maträtt */
-    border-radius: 10px;
-  }
-  
-  .detail-container p {
-    margin: 5px 0;
-  }
-  
+  display: flex; /* Lägger till flexbox */
+  flex-direction: column; /* Element ordnas vertikalt */
+  justify-content: center; /* Centrerar innehållet vertikalt */
+  align-items: center; /* Centrerar innehållet horisontellt */
+  margin-top: 20px;
+  width: 100%;
+  font-weight: 600;
+}
+
+.detail-container img {
+  border: 2px solid black;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  width: 500px; /* Storlek för vald bild */
+  max-width: 100%; /* Gör att bilden inte blir större än sin behållare */
+  height: auto; /* Behåller bildens proportioner */
+  border-radius: 10px;
+  margin: 0 auto; /* Centrerar bilden horisontellt */
+}
+
+.detail-container h1 {
+  margin: 0;
+  background-color: rgb(57, 143, 31);
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  text-align: center; /* Centrerar texten */
+}
+.detail-container p {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center; /* Centrerar texten */
+}
+
+.detail-container ul {
+  display: flex; /* Lägger till flexbox */
+  flex-direction: column; /* Element ordnas vertikalt */
+  align-items: center; /* Centrerar innehållet horisontellt */
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Tar bort punkterna från listan */
+}
+
+.selectmeal {
+  display: flex; /* Lägger till flexbox */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+}
