@@ -23,3 +23,16 @@
 .Navbar {
     display: flex;
 }
+
+@media screen and (max-width: 768px) {
+    .header-container h1{
+        font-size: 4rem;
+    }
+
+    .header-container {
+        height: 20vh;
+        background-image: url('Header.jpg');
+        background-size: cover;
+        width: 100%;
+    }
+}

@@ -15,3 +15,15 @@
   font-weight: 400;
   background-color:  rgb(232, 172, 83);
 }
+
+@media screen and (max-width: 768px) {
+  .app-container {
+    margin-top: 20px; /* Lägg till lite mellanrum på mindre skärmar */
+    flex-direction: column; /* Gör så att containers hamnar ovanpå varandra på mindre skärmar */
+    align-items: center; /* Centrerar innehållet vertikalt */
+    width: 100%;
+  }
+  .search-detail-container {
+    padding: 0; /* Ta bort padding på mindre skärmar */
+  }
+}
