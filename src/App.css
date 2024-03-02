@@ -1,4 +1,7 @@
+
 .app-container {
+  font-family: 'Poppins thin', sans-serif;
+  font-weight: 200;
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -10,9 +13,6 @@
 }
 
  body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
   background-color:  rgb(232, 172, 83);
 }
 
