@@ -16,6 +16,8 @@
 }
 
 .header-container h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
     z-index: 1;
     display: flex;
     font-size: 7rem;
