@@ -53,8 +53,10 @@
     }
 
     .header-overlay {
-        margin: 0 7%;
+        margin: 0;
         z-index: 1;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .header-container img {

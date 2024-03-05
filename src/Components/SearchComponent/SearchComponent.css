@@ -85,13 +85,27 @@
 
     .search-input {
       width: 200px;
-      height: 20px;
+      height: 30px;
       justify-content: center;
     }
 
     .search-container button {
-      width: 80px;
+      width: 100px;
       padding: 5px;
+    }
+
+    .search-info {
+      width: 350px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-info h2 {
+      font-size: 1rem;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
     }
 
   }
