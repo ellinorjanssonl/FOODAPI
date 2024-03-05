@@ -7,10 +7,10 @@ const Header = () => {
     <>
         <Navbar className='Navbar'>
         <div className="header-container">
-          <img src='Header.jpg' alt='header' className='header-img'/>
-          <div className="header-overlay">
+        <div className="header-overlay">
         <h1>Maträtter</h1>
         </div>
+        <img src='Header.jpg' alt='header' className='header-img'/>
         </div>
         </Navbar>
     </>
