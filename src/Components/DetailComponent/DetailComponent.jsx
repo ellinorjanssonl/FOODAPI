@@ -36,8 +36,8 @@ const DetailComponent = ({ selectedMeal }) => {
             <li className="list"key={key}>{selectedMeal[key]}</li>
           ))}
       </ul>
-      <h2><strong>Instruktioner:</strong></h2>
-      <p>{selectedMeal.strInstructions}</p>
+      <h2 ><strong>Instruktioner:</strong></h2>
+      <p className='instruktioner'>{selectedMeal.strInstructions}</p>
     </div>
     </div>
   );

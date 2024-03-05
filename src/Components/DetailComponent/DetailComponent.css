@@ -81,3 +81,12 @@
   font-weight: 700;
   font-size: 1rem;
 }
+
+.instruktioner {
+  display: flex; /* Lägger till flexbox */
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+
+}

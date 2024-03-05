@@ -12,6 +12,12 @@
   padding: 20px; /* Lägg till lite mellanrum mellan dina containers */
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Gör så att padding och border inte lägger till extra bredd på dina containers */
+}
+
  body {
   background-color:  rgb(232, 172, 83);
 }

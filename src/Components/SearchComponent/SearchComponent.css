@@ -1,7 +1,8 @@
 .search-container {
     font-family: 'Poppins', sans-serif;
-    font-weight: 200;
     display: flex;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
     flex-direction: column;
     align-items: center;
     border: 2px solid black;
@@ -19,16 +20,15 @@
   }
   
   .meals-list {
+    padding-top: 2rem;
     max-height: 100vh; 
     scroll-behavior: smooth;
     scrollbar-color: rgb(255, 198, 112) rgb(46, 44, 40);
     overflow-y: auto; 
     list-style: none; 
-    padding: 0; 
     color: rgb(255, 198, 112);
     list-style: none;
-    font-weight: 700;
-    padding: 0;
+    font-weight: 400;
   }
   
   .meal-item {
@@ -36,7 +36,7 @@
     display: flex;
     flex-direction: column;/* Gör så att varje maträtt hamnar under varandra */
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 19px;
   }
   
   .meal-item img {
@@ -54,7 +54,7 @@
   
   .search-info {
     color: rgb(255, 198, 112);
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 20px;
   }
 
@@ -66,7 +66,6 @@
     padding: 10px;
     width: 100px;
     cursor: pointer;
-    font-weight: 700;
     font-size: 1rem;
     transition: transform 0.5s ease-in-out;
   }
