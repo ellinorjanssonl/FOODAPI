@@ -71,9 +71,8 @@
   }
 
   @media screen and (max-width: 768px) {
-
     .search-container {
-      width: 100%;
+      margin:0 5%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -81,6 +80,7 @@
 
     .meals-list {
       max-height: 45vh;
+      width: 80%;
     }
 
     .search-input {
@@ -94,8 +94,4 @@
       padding: 5px;
     }
 
-    .search-container{
-      width: 100%;
-    }
   }
-  ```
