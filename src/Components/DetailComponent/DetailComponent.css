@@ -34,6 +34,28 @@
   text-align: center; /* Centrerar texten */
 }
 
+.rating-container {
+  display: flex; /* Lägger till flexbox */
+  justify-content: center; /* Centrerar innehållet horisontellt */
+  align-items: center; /* Centrerar innehållet vertikalt */
+  margin-top: 10px;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.rating-container p {
+  margin: 0;
+  padding: 0 1rem;
+}
+
+#rating {
+  color: rgb(5, 5, 5);
+  background-color: rgb(49, 171, 25);
+  padding: 0.5rem;
+  margin-left: 1rem;
+  border: 1px solid black;
+}
+
 .detail-container h2 {
   margin: 0;
   padding-top: 0.5rem;

@@ -16,16 +16,18 @@ const DetailComponent = ({ selectedMeal }) => {
       <h1>{selectedMeal.strMeal}</h1>
       <img className="imgmeal" src={selectedMeal.strMealThumb} alt={`Bild av ${selectedMeal.strMeal}`} />
       <div>
-    <p>Aktuellt Betyg: {rating}/5</p>
-    <label htmlFor="rating">Ändra betyg:</label>
-    <select id="rating" value={rating} onChange={(e) => setRating(e.target.value)}>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-  </div>
+              <div className="rating-container">
+          <p>Aktuellt Betyg: {rating}/5</p>
+          <label htmlFor="rating"> Ändra betyg:</label>
+          <select id="rating" value={rating} onChange={(e) => setRating(e.target.value)}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+            </div>
       <h2><strong>Ingredienser:</strong></h2>
       <ul>
         {Object.keys(selectedMeal)

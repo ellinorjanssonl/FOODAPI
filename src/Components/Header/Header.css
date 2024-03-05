@@ -41,13 +41,13 @@
 
 @media screen and (max-width: 768px) {
    .header-container{
-       height: 30vh;
+       height: 20vh;
        width: 100%;
     }
 
     .header-container h1{
         font-size: 4rem;
-        margin-top: 40%;
+        margin-top: 25%;
         justify-content: center;
         text-align: center;
     }
@@ -57,7 +57,7 @@
     }
 
     .header-container img {
-        height: 30vh;
+        height: 20vh;
         width: 100%;
         object-fit: cover;
     }
