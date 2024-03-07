@@ -16,6 +16,7 @@ const DetailComponent = ({ selectedMeal }) => {
       <h1>{selectedMeal.strMeal}</h1>
       <img className="imgmeal" src={selectedMeal.strMealThumb} alt={`Bild av ${selectedMeal.strMeal}`} />
       <div>
+       
               <div className="rating-container">
           <p>Aktuellt Betyg: {rating}/5</p>
           <label htmlFor="rating"> Ändra betyg:</label>
@@ -28,6 +29,7 @@ const DetailComponent = ({ selectedMeal }) => {
           </select>
         </div>
             </div>
+      <div className='information'>
       <h2><strong>Ingredienser:</strong></h2>
       <ul>
         {Object.keys(selectedMeal)
@@ -38,6 +40,8 @@ const DetailComponent = ({ selectedMeal }) => {
       </ul>
       <h2 ><strong>Instruktioner:</strong></h2>
       <p className='instruktioner'>{selectedMeal.strInstructions}</p>
+    
+    </div>
     </div>
     </div>
   );
