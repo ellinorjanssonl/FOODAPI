@@ -14,11 +14,11 @@ const App = () => {
     setSelectedMeal(meal);
   }
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Håller koll på inloggningsstatus
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLogin = (Name) => {
+  const handleLogin = (name) => {
     setIsLoggedIn(true); // Kalla på denna funktion när användaren loggar in
-    setName(Name);
+    setName(name);
   };
 
   const handleLogout = () => {
