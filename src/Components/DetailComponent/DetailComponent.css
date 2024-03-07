@@ -108,3 +108,35 @@ padding-bottom: 2rem;
   font-weight: 700;
   font-size: 1rem;
 }
+
+@media screen and (max-width: 768px) {
+  .detail-container {
+    display: flex; /* Lägger till flexbox */
+    flex-direction: column; /* Element ordnas vertikalt */
+    align-items: center; /* Centrerar innehållet horisontellt */
+    width: 100%;
+    height: 100%;
+  }
+
+  .information {
+    max-height: 45vh;
+    width: auto;
+    margin: 0 5%;
+  }
+
+  .detail-container img {
+    width: 350px; /* Storlek för vald bild */
+    max-height: 250px; /* Storlek för vald bild */
+  }
+  
+  .detail-container h1 {
+    font-size: 2rem;
+  }
+
+
+  .detail-container p {
+    font-size: 1rem;
+  }
+
+ 
+}
