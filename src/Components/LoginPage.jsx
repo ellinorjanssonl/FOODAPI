@@ -8,8 +8,7 @@ const LoginPage = ({setName, onLogin}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const name = event.target[0].value;
-    // Anta att inloggningen lyckas
-    onLogin(name); // Uppdatera denna del för att inkludera användarnamnet från form
+    onLogin(name);
     navigate('/'); // Omdirigera användaren till hemsidan
   };
 

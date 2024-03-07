@@ -4,6 +4,8 @@ import './DetailComponent.css';
 // Om det inte finns någon vald maträtt så visas en text som säger att användaren ska välja en maträtt först.
 const DetailComponent = ({ selectedMeal }) => {
   if (!selectedMeal) return <div className='selectmeal'>Välj en maträtt för att se detaljer här.</div>;
+
+  
   
   const [rating, setRating] = useState(selectedMeal.rating);
   

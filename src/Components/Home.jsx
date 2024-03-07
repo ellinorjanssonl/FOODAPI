@@ -4,8 +4,8 @@ import DetailComponent from './DetailComponent/DetailComponent';
 import './Home.css';
 
 const Home = ({ name, onSelectMeal, selectedMeal }) => {
+
   return (
-    
     <div className="app-container">
       <div className="search-detail-container">
       {name && <h1>Välkommen {name}!</h1>}
