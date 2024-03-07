@@ -1,33 +1,41 @@
 import React, { useState } from 'react';
-import SearchComponent from './Components/SearchComponent/SearchComponent';
-import DetailComponent from './Components/DetailComponent/DetailComponent';
 import Header from './Components/Header/Header';
+import Home from './Components/Home'; // Importera din nya Home-komponent
+import LoginPage from './Components/LoginPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-// Detta är en funktionell komponent som renderar två komponenter: SearchComponent och DetailComponent.
-// SearchComponent är en komponent som innehåller ett input-fält och en knapp för att söka efter maträtter.
-// När användaren klickar på knappen så anropas en funktion som hämtar data från ett API och uppdaterar state-variabeln meals med den data som hämtats.
-// DetailComponent är en komponent som visar detaljer om en vald maträtt.
+
 const App = () => {
   const [selectedMeal, setSelectedMeal] = useState(null);
+  const [name, setName] = useState(''); 
 
   const handleSelectMeal = (meal) => {
     setSelectedMeal(meal);
+  }
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Håller koll på inloggningsstatus
+
+  const handleLogin = (Name) => {
+    setIsLoggedIn(true); // Kalla på denna funktion när användaren loggar in
+    setName(Name);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false); // Kalla på denna funktion när användaren loggar ut
+    setName('');
   };
 
   return (
-    <>
-      <Header /> 
-    <div className="app-container">
-      <div className="search-detail-container">
-        <SearchComponent onSelectMeal={handleSelectMeal} />
-      </div>
-      <div className="search-detail-container">
-        <DetailComponent selectedMeal={selectedMeal} />
-      </div>
-    </div>
-    </>
+    <Router>
+      <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+      <Routes>
+      <Route path="/login" element={<LoginPage onLogin={handleLogin} setName={setName} />} />
+      <Route path="/" element={<Home name={name} onSelectMeal={handleSelectMeal} selectedMeal={selectedMeal} />} /> {/* Lägg till denna Route */}
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+

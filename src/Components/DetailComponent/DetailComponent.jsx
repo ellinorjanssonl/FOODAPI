@@ -6,6 +6,7 @@ const DetailComponent = ({ selectedMeal }) => {
   if (!selectedMeal) return <div className='selectmeal'>Välj en maträtt för att se detaljer här.</div>;
   
   const [rating, setRating] = useState(selectedMeal.rating);
+  
   // Om det finns en vald maträtt så visas en bild på maträtten, namnet på maträtten, en lista med ingredienser och instruktioner för hur maträtten tillagas.
   // Jag använder Object.keys(selectedMeal) för att loopa igenom alla nycklar i objektet selectedMeal.
   // Om nyckeln innehåller strIngredient och värdet inte är null så visas värdet i en li-element.

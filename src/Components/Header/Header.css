@@ -37,6 +37,28 @@
     display: flex;
 }
 
+.navigation-links {
+    display: inline-flex;
+    margin-left: 1rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    color: rgb(46, 44, 40);
+    cursor: pointer;
+}
+
+.login-link, .home-link {
+   color: rgb(252, 218, 49);
+   background-color: rgb(45, 45, 45);
+   padding: 0.5rem 1rem;
+   border-radius: 10px;
+   text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
    .header-container{
        height: 20vh;
