@@ -14,22 +14,22 @@
 }
 
 .header-container h1{
+    display: flex;
+    width: 100%;
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
     z-index: 1;
-    display: flex;
     font-size: 7rem;
     color: rgb(232, 172, 83);
     text-align: center;
     margin-top: 40%;
     letter-spacing: 0.5rem;
-    font-weight: 700;
 }
 
 .header-overlay {
     position: absolute;
     top: 0;
-    margin: 0 30%;
+    margin: 0 25%;
     z-index: 1;
 }
 
