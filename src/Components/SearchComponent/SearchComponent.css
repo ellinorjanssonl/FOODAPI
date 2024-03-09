@@ -59,6 +59,8 @@
   }
 
   .search-container button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
     background-color: rgb(57, 143, 31);
     border: 2px solid black;
     color:rgb(255, 198, 112);
