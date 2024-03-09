@@ -32,6 +32,7 @@ const App = () => {
       <Routes>
       <Route path="/login" element={<LoginPage onLogin={handleLogin} setName={setName} />} />
       <Route path="/" element={<Home name={name} onSelectMeal={handleSelectMeal} selectedMeal={selectedMeal} />} /> {/* Lägg till denna Route */}
+
       </Routes>
     </Router>
   );

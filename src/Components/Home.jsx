@@ -2,6 +2,7 @@ import React from 'react';
 import SearchComponent from './SearchComponent/SearchComponent';
 import DetailComponent from './DetailComponent/DetailComponent';
 import './Home.css';
+ 
 
 const Home = ({ name, onSelectMeal, selectedMeal }) => {
 

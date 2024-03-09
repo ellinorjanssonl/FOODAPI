@@ -6,7 +6,6 @@ const DetailComponent = ({ selectedMeal }) => {
   if (!selectedMeal) return <div className='selectmeal'>Chose a meal to see more here!.</div>;
 
   
-  
   const [rating, setRating] = useState(selectedMeal.rating);
   
   // Om det finns en vald maträtt så visas en bild på maträtten, namnet på maträtten, en lista med ingredienser och instruktioner för hur maträtten tillagas.
