@@ -3,7 +3,7 @@ import './DetailComponent.css';
 
 // Om det inte finns någon vald maträtt så visas en text som säger att användaren ska välja en maträtt först.
 const DetailComponent = ({ selectedMeal }) => {
-  if (!selectedMeal) return <div className='selectmeal'>Välj en maträtt för att se detaljer här.</div>;
+  if (!selectedMeal) return <div className='selectmeal'>Chose a meal to see more here!.</div>;
 
   
   
@@ -21,8 +21,8 @@ const DetailComponent = ({ selectedMeal }) => {
       <div>
        
               <div className="rating-container">
-          <p>Aktuellt Betyg: {rating}/5</p>
-          <label htmlFor="rating"> Ändra betyg:</label>
+          <p>Current grade: {rating}/5</p>
+          <label htmlFor="rating"> Change grade:</label>
           <select id="rating" value={rating} onChange={(e) => setRating(e.target.value)}>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -33,7 +33,7 @@ const DetailComponent = ({ selectedMeal }) => {
         </div>
             </div>
       <div className='information'>
-      <h2><strong>Ingredienser:</strong></h2>
+      <h2><strong>Ingredients:</strong></h2>
       <ul>
         {Object.keys(selectedMeal)
           .filter((key) => key.includes('strIngredient') && selectedMeal[key])
@@ -41,7 +41,17 @@ const DetailComponent = ({ selectedMeal }) => {
             <li className="list"key={key}>{selectedMeal[key]}</li>
           ))}
       </ul>
-      <h2 ><strong>Instruktioner:</strong></h2>
+      <h2><strong>Measurements:</strong></h2>
+      <ul>
+       {Object.keys(selectedMeal)
+          .filter((key) => key.includes('strMeasure') && selectedMeal[key])
+          .map((key) => (
+            <li className="list" key={key}>{selectedMeal[key]}</li>
+          )) 
+       }
+       </ul>
+
+      <h2 ><strong>Instruktions:</strong></h2>
       <p className='instruktioner'>{selectedMeal.strInstructions}</p>
     
     </div>

@@ -8,7 +8,7 @@ const Home = ({ name, onSelectMeal, selectedMeal }) => {
   return (
     <div className="app-container">
       <div className="search-detail-container">
-      {name && <h1>Välkommen {name}!</h1>}
+      {name && <h1>Welcome {name}!</h1>}
         <SearchComponent onSelectMeal={onSelectMeal} />
       </div>
       <div className="search-detail-container">

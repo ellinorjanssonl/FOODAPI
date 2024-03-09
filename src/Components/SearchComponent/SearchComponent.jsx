@@ -26,7 +26,7 @@ const SearchComponent = ({ onSelectMeal }) => {
   // man använder value={query} för att koppla värdet i input-fältet till state-variabeln query.
     return (
         <div className="search-container">
-        <h2 className="search-info">Sök efter en maträtt här!</h2>
+        <h2 className="search-info">Search for food here!</h2>
           <input type="text" className="search-input" value={query} onChange={(e) => setQuery(e.target.value)} />
           <button onClick={searchMeals}>Search</button> 
           <ul className="meals-list">
@@ -34,7 +34,7 @@ const SearchComponent = ({ onSelectMeal }) => {
          <li key={meal.idMeal} className="meal-item" onClick={() => onSelectMeal(meal)}>
            <img src={meal.strMealThumb} alt={meal.strMeal} />
             <p>{meal.strMeal}</p>
-             <p>Betyg: {meal.rating}/5</p>
+             <p>Grade: {meal.rating}/5</p>
            </li>
           ))}
         </ul>
