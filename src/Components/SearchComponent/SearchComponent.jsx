@@ -1,46 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SearchComponent.css';
 
-// Detta är en funktionell komponent som tar emot en prop onSelectMeal.
-// När man klickar på en maträtt i listan så anropas onSelectMeal med den valda maträtten som argument.
 const SearchComponent = ({ onSelectMeal }) => {
   const [query, setQuery] = useState('');
   const [meals, setMeals] = useState([]);
 
-  // Funktionen searchMeals anropas när man klickar på knappen "Search".
-  // Funktionen hämtar data från ett API och uppdaterar state-variabeln meals med den data som hämtats.
+
   const searchMeals = async () => {
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
     const data = await response.json();
     setMeals(data.meals);
   };
-  
 
-  meals.forEach(meal => {
-    meal.rating = Math.ceil(Math.random() * 5); // Ger ett betyg mellan 1 och 5
-  });
 
-  // Komponenten returnerar ett input-fält och en knapp för att söka efter maträtter.
-  // Om state-variabeln meals innehåller data så renderas en lista med maträtter.
-  // Varje maträtt i listan är en li-element som innehåller en bild och namnet på maträtten.
-  // man använder value={query} för att koppla värdet i input-fältet till state-variabeln query.
-    return (
-        <div className="search-container">
-        <h2 className="search-info">Search for food here!</h2>
-          <input type="text" className="search-input" value={query} onChange={(e) => setQuery(e.target.value)} />
-          <button onClick={searchMeals}>Search</button> 
-          <ul className="meals-list">
-         {meals && meals.map((meal) => (
-         <li key={meal.idMeal} className="meal-item" onClick={() => onSelectMeal(meal)}>
-           <img src={meal.strMealThumb} alt={meal.strMeal} />
+  return (
+    <div className="search-container">
+      <h2 className="search-info">Search for food here!</h2>
+      <input type="text" className="search-input" value={query} onChange={(e) => setQuery(e.target.value)} />
+      <button onClick={searchMeals}>Search</button>
+      <ul className="meals-list">
+        {meals && meals.map((meal) => (
+          <li key={meal.idMeal} className="meal-item" onClick={() => onSelectMeal(meal)}>
+            <img src={meal.strMealThumb} alt={meal.strMeal} />
             <p>{meal.strMeal}</p>
-             <p>Grade: {meal.rating}/5</p>
-           </li>
-          ))}
-        </ul>
-        </div>
-      );
-    };
-
+            <p>Grade: {Math.ceil(Math.random() * 5)}/5</p> {/* Uppdaterad för att minska beräkningarna */}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default SearchComponent;
