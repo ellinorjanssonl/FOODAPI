@@ -20,8 +20,8 @@ const LoginPage = ({setName, onLogin}) => {
           <Form.Control type="text" placeholder="Enter name"  onChange={(e) => setName(e.target.value)}/>
           <Form.Label className='Label'>Email</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
-        </Form.Group>
-        <Form.Group>
+          </Form.Group>
+          <Form.Group>
           <Form.Label className='Label'>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
