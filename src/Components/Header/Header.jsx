@@ -2,8 +2,6 @@ import './Header.css'
 import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-
-
 const Header = ({ isLoggedIn, onLogout }) => {
   return (
     <>

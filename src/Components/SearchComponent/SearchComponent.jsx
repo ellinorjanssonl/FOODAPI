@@ -52,11 +52,12 @@ const SearchComponent = ({ onSelectMeal, selectedCategory }) => {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Enter meal or category..."
       />
-      <button onClick={searchMeals} disabled={isLoading}>Search</button>
-      {error && <p className="error">{error}</p>}
-      {isLoading ? (
+        <button onClick={searchMeals} disabled={isLoading}>Search</button>
+        {error && <p className="error">{error}</p>}
+        {isLoading ? (
         <p>Loading...</p>
-      ) : (
+        ) : (
+       
         <ul className="meals-list">
           {meals && meals.map((meal) => (
             <li key={meal.idMeal} className="meal-item" onClick={() => onSelectMeal(meal)}>

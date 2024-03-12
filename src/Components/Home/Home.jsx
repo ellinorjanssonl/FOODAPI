@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchComponent from './SearchComponent/SearchComponent';
-import DetailComponent from './DetailComponent/DetailComponent';
+import SearchComponent from '../SearchComponent/SearchComponent';
+import DetailComponent from '../DetailComponent/DetailComponent';
 import './Home.css';
 import { useLocation } from 'react-router-dom';
 
