@@ -3,17 +3,30 @@ import './DetailComponent.css';
 import ReactStars from "react-rating-stars-component";
 
 const DetailComponent = ({ selectedMeal }) => {
-  if (!selectedMeal) return <div className='selectmeal'>Chose a meal to see more here!.</div>;
+  if (!selectedMeal) return <div className='selectmeal'>Choose a meal to see more here!</div>;
 
-  const [rating, setRating] = useState(selectedMeal.rating || 0);
-  const [mealById, setMealById] = useState(null);
+  // Hämta sparade betyg från localStorage vid initial laddning
+  const [localRatings, setLocalRatings] = useState(() => {
+    const savedRatings = localStorage.getItem('ratings');
+    return savedRatings ? JSON.parse(savedRatings) : {};
+  });
 
-  // Anropa denna funktion varje gång betyget ändras för att spara det nya betyget.
+  // Uppdatera rating baserat på det sparade betyget för den valda maträtten, eller använd 0 som standardvärde
+  const [rating, setRating] = useState(localRatings[selectedMeal.idMeal] || 0);
+
+  // Uppdatera rating när vald maträtts betyg ändras
   useEffect(() => {
-  }, [rating]);
+    setRating(localRatings[selectedMeal.idMeal] || 0);
+  }, [selectedMeal, localRatings]);
 
   const ratingChanged = (newRating) => {
     setRating(newRating);
+    const updatedRatings = {
+      ...localRatings,
+      [selectedMeal.idMeal]: newRating,
+    };
+    setLocalRatings(updatedRatings);
+    localStorage.setItem('ratings', JSON.stringify(updatedRatings));
   };
 
   const ingredientsWithMeasurements = Object.keys(selectedMeal)
@@ -41,16 +54,23 @@ const DetailComponent = ({ selectedMeal }) => {
         <h2><strong>Ingredients:</strong></h2>
         <ul>
           {ingredientsWithMeasurements.map((item, index) => (
-            <li className="list" key={index}>{item.ingredient} - {item.measurement}</li>
+            <li key={index}>{item.ingredient} - {item.measurement}</li>
           ))}
         </ul>
         <h2><strong>Instructions:</strong></h2>
-        <p className='instruktioner'>{mealById ? mealById.strInstructions : selectedMeal.strInstructions}</p>
-        <h2><strong>Video:</strong></h2>
-        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${selectedMeal.strYoutube.slice(-11)}`} title="YouTube video player" allowFullScreen></iframe>
+        <p className='instructions'>{selectedMeal.strInstructions}</p>
+        {selectedMeal.strYoutube && (
+          <div>
+            <h2><strong>Video:</strong></h2>
+            <iframe width="560" height="315" src={`https://www.youtube.com/embed/${selectedMeal.strYoutube.slice(-11)}`} title="YouTube video player" allowFullScreen></iframe>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
 export default DetailComponent;
+
+
+
