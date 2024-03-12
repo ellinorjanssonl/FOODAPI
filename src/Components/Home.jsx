@@ -2,15 +2,13 @@ import React from 'react';
 import SearchComponent from './SearchComponent/SearchComponent';
 import DetailComponent from './DetailComponent/DetailComponent';
 import './Home.css';
- 
 
-const Home = ({ name, onSelectMeal, selectedMeal }) => {
-
+const Home = ({ name, onSelectMeal, selectedMeal, meals }) => {
   return (
     <div className="app-container">
       <div className="search-detail-container">
-      {name && <h1>Welcome {name}!</h1>}
-        <SearchComponent onSelectMeal={onSelectMeal} />
+        {name && <h1>Welcome {name}!</h1>}
+        <SearchComponent onSelectMeal={onSelectMeal} meals={meals} />
       </div>
       <div className="search-detail-container">
         <DetailComponent selectedMeal={selectedMeal} />

@@ -12,6 +12,13 @@ const DetailComponent = ({ selectedMeal }) => {
   // Jag använder Object.keys(selectedMeal) för att loopa igenom alla nycklar i objektet selectedMeal.
   // Om nyckeln innehåller strIngredient och värdet inte är null så visas värdet i en li-element.
   // Om nyckeln innehåller strInstructions så visas värdet i ett p-element.
+  const ingredientsWithMeasurements = Object.keys(selectedMeal)
+  .filter(key => key.includes('strIngredient') && selectedMeal[key])
+  .map(key => {
+    const measurementKey = `strMeasure${key.slice(13)}`; // Skapar nyckeln för motsvarande mått baserat på ingrediensnyckeln
+    return { ingredient: selectedMeal[key], measurement: selectedMeal[measurementKey] || '' }; // Returnerar objekt med ingrediens och motsvarande mått
+  });
+
   return (
     <div>
        <div className="detail-container">
@@ -34,25 +41,15 @@ const DetailComponent = ({ selectedMeal }) => {
       <div className='information'>
       <h2><strong>Ingredients:</strong></h2>
       <ul>
-        {Object.keys(selectedMeal)
-          .filter((key) => key.includes('strIngredient') && selectedMeal[key])
-          .map((key) => (
-            <li className="list"key={key}>{selectedMeal[key]}</li>
-          ))}
-      </ul>
-      <h2><strong>Measurements:</strong></h2>
-      <ul>
-       {Object.keys(selectedMeal)
-          .filter((key) => key.includes('strMeasure') && selectedMeal[key])
-          .map((key) => (
-            <li className="list" key={key}>{selectedMeal[key]}</li>
-          )) 
-       }
-       </ul>
+        {ingredientsWithMeasurements.map((item, index) => (
+              <li className="list" key={index}>{item.ingredient} - {item.measurement}</li>
+        ))}
+          <h2><strong>Instructions:</strong></h2>
+          <p className='instruktioner'>{selectedMeal.strInstructions}</p>
 
-      <h2 ><strong>Instruktions:</strong></h2>
-      <p className='instruktioner'>{selectedMeal.strInstructions}</p>
-    
+          <h2><strong>Video:</strong></h2>
+          <iframe width="460" height="215" src={`https://www.youtube.com/embed/${selectedMeal.strYoutube.slice(-11)}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </ul> 
     </div>
     </div>
     </div>

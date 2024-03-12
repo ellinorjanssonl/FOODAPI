@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import './SearchComponent.css';
 
 const SearchComponent = ({ onSelectMeal }) => {
@@ -12,12 +12,18 @@ const SearchComponent = ({ onSelectMeal }) => {
     setMeals(data.meals);
   };
 
+  const searchMealsCategory = async () => {
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`);
+    const data = await response.json();
+    setMeals(data.meals);
+  };
+ 
 
   return (
     <div className="search-container">
       <h2 className="search-info">Search for food here!</h2>
       <input type="text" className="search-input" value={query} onChange={(e) => setQuery(e.target.value)} />
-      <button onClick={searchMeals}>Search</button>
+      <button onClick={() => { searchMeals(); searchMealsCategory(); }}>Search</button>
       <ul className="meals-list">
         {meals && meals.map((meal) => (
           <li key={meal.idMeal} className="meal-item" onClick={() => onSelectMeal(meal)}>
