@@ -30,8 +30,8 @@ const SearchComponent = ({ onSelectMeal, selectedCategory }) => {
       <input type="text" className="search-input" value={query} onChange={(e) => setQuery(e.target.value)} />
       <button onClick={() => { searchMeals(); searchMealsCategory(); }}>Search</button>
       <ul className="meals-list">
-        {meals && meals.map((meal, categoryName) => (
-          <li key={meal.idMeal} className="meal-item" onClick={() => onSelectMeal(meal, categoryName)}>
+        {meals && meals.map((meal) => (
+          <li key={meal.idMeal} className="meal-item" onClick={() => onSelectMeal(meal)}>
             <img src={meal.strMealThumb} alt={meal.strMeal} />
             <p>{meal.strMeal}</p>
             <p>Grade: {Math.ceil(Math.random() * 5)}/5</p> {/* Uppdaterad för att minska beräkningarna */}

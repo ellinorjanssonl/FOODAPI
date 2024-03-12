@@ -23,7 +23,6 @@ const Header = ({ isLoggedIn, onLogout }) => {
                 <Link to="/login" className="login-link">Login</Link>
             )}
             <Link to="/" className="home-link">Home</Link>
-            <Link to="/Category" className="login-link">Categories</Link>
         </div>
     </>
   )
