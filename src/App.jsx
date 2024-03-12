@@ -25,9 +25,13 @@ const App = () => {
     setName('');
   };
 
+  const clearState = () => {
+    setSelectedMeal(null);
+  };
+
   return (
     <Router>
-      <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+      <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} clearState={clearState}/>
       <Routes>
         <Route path="/login" element={<LoginPage onLogin={handleLogin} setName={setName} />} />
         <Route path="/" element={<Home name={name} onSelectMeal={handleSelectMeal} selectedMeal={selectedMeal}/>} />
