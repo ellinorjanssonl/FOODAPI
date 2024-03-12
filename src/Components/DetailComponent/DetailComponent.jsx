@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, {useState } from 'react';
 import './DetailComponent.css';
 
 // Om det inte finns någon vald maträtt så visas en text som säger att användaren ska välja en maträtt först.
-const DetailComponent = ({ selectedMeal }) => {
+const DetailComponent = ({ selectedMeal}) => {
   if (!selectedMeal) return <div className='selectmeal'>Chose a meal to see more here!.</div>;
+
+
 
   
   const [rating, setRating] = useState(selectedMeal.rating);
@@ -15,13 +17,14 @@ const DetailComponent = ({ selectedMeal }) => {
   const ingredientsWithMeasurements = Object.keys(selectedMeal)
   .filter(key => key.includes('strIngredient') && selectedMeal[key])
   .map(key => {
-    const measurementKey = `strMeasure${key.slice(13)}`; // Skapar nyckeln för motsvarande mått baserat på ingrediensnyckeln
+   const measurementKey = `strMeasure${key.slice(13)}`; 
     return { ingredient: selectedMeal[key], measurement: selectedMeal[measurementKey] || '' }; // Returnerar objekt med ingrediens och motsvarande mått
   });
 
   return (
     <div>
        <div className="detail-container">
+        
       <h1>{selectedMeal.strMeal}</h1>
       <img className="imgmeal" src={selectedMeal.strMealThumb} alt={`Bild av ${selectedMeal.strMeal}`} />
       <div>
@@ -48,7 +51,7 @@ const DetailComponent = ({ selectedMeal }) => {
           <p className='instruktioner'>{selectedMeal.strInstructions}</p>
 
           <h2><strong>Video:</strong></h2>
-          <iframe width="460" height="215" src={`https://www.youtube.com/embed/${selectedMeal.strYoutube.slice(-11)}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="460" height="215" src={`https://www.youtube.com/embed/${selectedMeal.strYoutube}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
        </ul> 
     </div>
     </div>

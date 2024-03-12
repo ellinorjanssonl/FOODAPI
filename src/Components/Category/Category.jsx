@@ -14,14 +14,12 @@ const Category = () => {
     setCategories(data.categories);
   };
 
-  const fetchMeals = async (categoryName) => {
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`);
-    const data = await response.json();
-    setMeals(data.meals);
-  };
-
-  const handleCategorySelect = async () => {
-    navigate('/'); // Navigera eventuellt efter att du har hanterat måltidslistan
+  const handleCategorySelect = (selectedCategory) => {
+    console.log(selectedCategory)
+    if (selectedCategory) {
+      navigate('/', { state: { category: selectedCategory } }); 
+    }
+    // Navigera eventuellt efter att du har hanterat måltidslistan
   };
 
   useEffect(() => {
@@ -34,7 +32,7 @@ const Category = () => {
       <h1 className='Category'>Categories</h1>
       <ul className='Category-list'>
         {categories.map((category) => (
-          <li key={category.idCategory} className="meal-item-category" onClick={() => handleCategorySelect()}>
+          <li key={category.idCategory} className="meal-item-category" onClick={() => handleCategorySelect(category.strCategory)}>
             <h2 className='category-h1'>{category.strCategory}</h2>
             <img className='category-img'src={category.strCategoryThumb} alt={category.strCategory} />
           </li>

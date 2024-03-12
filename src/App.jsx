@@ -38,7 +38,7 @@ const App = () => {
       <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
       <Routes>
         <Route path="/login" element={<LoginPage onLogin={handleLogin} setName={setName} />} />
-        <Route path="/" element={<Home name={name} onSelectMeal={handleSelectMeal} selectedMeal={selectedMeal}/>} />
+        <Route path="/" element={<Home meals={meals} name={name} onSelectMeal={handleSelectMeal} selectedMeal={selectedMeal}/>} />
         <Route path="/category" element={<Category onSelectCategory={handleCategorySelect} onSelectMeal={handleSelectMeal}  />} />
       </Routes>
     </Router>
